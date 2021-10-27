@@ -1,7 +1,7 @@
 {
-    "name": "xyz",
+    "name": "iamserviceaccount",
     "resources": {
-        "xyz:index:StaticPage": {
+        "iam:index:IamServiceAccount": {
             "isComponent": true,
             "inputProperties": {
                 "indexContent": {
@@ -37,7 +37,7 @@
         },
         "go": {
             "generateResourceContainerTypes": true,
-            "importBasePath": "github.com/pulumi/pulumi-xyz/sdk/go/xyz"
+            "importBasePath": "github.com/jaxxstorm/pulumi-aws-iamroleserviceaccount/sdk/go/iamroleserviceaccount"
         },
         "nodejs": {
             "dependencies": {

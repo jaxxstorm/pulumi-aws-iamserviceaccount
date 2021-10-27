@@ -9,14 +9,14 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 import pulumi_aws
 
-__all__ = ['StaticPageArgs', 'StaticPage']
+__all__ = ['IamServiceAccountArgs', 'IamServiceAccount']
 
 @pulumi.input_type
-class StaticPageArgs:
+class IamServiceAccountArgs:
     def __init__(__self__, *,
                  index_content: pulumi.Input[str]):
         """
-        The set of arguments for constructing a StaticPage resource.
+        The set of arguments for constructing a IamServiceAccount resource.
         :param pulumi.Input[str] index_content: The HTML content for index.html.
         """
         pulumi.set(__self__, "index_content", index_content)
@@ -34,7 +34,7 @@ class StaticPageArgs:
         pulumi.set(self, "index_content", value)
 
 
-class StaticPage(pulumi.ComponentResource):
+class IamServiceAccount(pulumi.ComponentResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
@@ -42,7 +42,7 @@ class StaticPage(pulumi.ComponentResource):
                  index_content: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Create a StaticPage resource with the given unique name, props, and options.
+        Create a IamServiceAccount resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] index_content: The HTML content for index.html.
@@ -51,17 +51,17 @@ class StaticPage(pulumi.ComponentResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
-                 args: StaticPageArgs,
+                 args: IamServiceAccountArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a StaticPage resource with the given unique name, props, and options.
+        Create a IamServiceAccount resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
-        :param StaticPageArgs args: The arguments to use to populate this resource's properties.
+        :param IamServiceAccountArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
         ...
     def __init__(__self__, resource_name: str, *args, **kwargs):
-        resource_args, opts = _utilities.get_resource_args_opts(StaticPageArgs, pulumi.ResourceOptions, *args, **kwargs)
+        resource_args, opts = _utilities.get_resource_args_opts(IamServiceAccountArgs, pulumi.ResourceOptions, *args, **kwargs)
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
@@ -83,15 +83,15 @@ class StaticPage(pulumi.ComponentResource):
         else:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = StaticPageArgs.__new__(StaticPageArgs)
+            __props__ = IamServiceAccountArgs.__new__(IamServiceAccountArgs)
 
             if index_content is None and not opts.urn:
                 raise TypeError("Missing required property 'index_content'")
             __props__.__dict__["index_content"] = index_content
             __props__.__dict__["bucket"] = None
             __props__.__dict__["website_url"] = None
-        super(StaticPage, __self__).__init__(
-            'xyz:index:StaticPage',
+        super(IamServiceAccount, __self__).__init__(
+            'iam:index:IamServiceAccount',
             resource_name,
             __props__,
             opts,

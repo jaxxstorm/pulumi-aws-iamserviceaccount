@@ -6,19 +6,19 @@ import * as utilities from "./utilities";
 
 import * as aws from "@pulumi/aws";
 
-export class StaticPage extends pulumi.ComponentResource {
+export class IamServiceAccount extends pulumi.ComponentResource {
     /** @internal */
-    public static readonly __pulumiType = 'xyz:index:StaticPage';
+    public static readonly __pulumiType = 'iam:index:IamServiceAccount';
 
     /**
-     * Returns true if the given object is an instance of StaticPage.  This is designed to work even
+     * Returns true if the given object is an instance of IamServiceAccount.  This is designed to work even
      * when multiple copies of the Pulumi SDK have been loaded into the same process.
      */
-    public static isInstance(obj: any): obj is StaticPage {
+    public static isInstance(obj: any): obj is IamServiceAccount {
         if (obj === undefined || obj === null) {
             return false;
         }
-        return obj['__pulumiType'] === StaticPage.__pulumiType;
+        return obj['__pulumiType'] === IamServiceAccount.__pulumiType;
     }
 
     /**
@@ -31,13 +31,13 @@ export class StaticPage extends pulumi.ComponentResource {
     public /*out*/ readonly websiteUrl!: pulumi.Output<string>;
 
     /**
-     * Create a StaticPage resource with the given unique name, arguments, and options.
+     * Create a IamServiceAccount resource with the given unique name, arguments, and options.
      *
      * @param name The _unique_ name of the resource.
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args: StaticPageArgs, opts?: pulumi.ComponentResourceOptions) {
+    constructor(name: string, args: IamServiceAccountArgs, opts?: pulumi.ComponentResourceOptions) {
         let inputs: pulumi.Inputs = {};
         opts = opts || {};
         if (!opts.id) {
@@ -54,14 +54,14 @@ export class StaticPage extends pulumi.ComponentResource {
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
-        super(StaticPage.__pulumiType, name, inputs, opts, true /*remote*/);
+        super(IamServiceAccount.__pulumiType, name, inputs, opts, true /*remote*/);
     }
 }
 
 /**
- * The set of arguments for constructing a StaticPage resource.
+ * The set of arguments for constructing a IamServiceAccount resource.
  */
-export interface StaticPageArgs {
+export interface IamServiceAccountArgs {
     /**
      * The HTML content for index.html.
      */

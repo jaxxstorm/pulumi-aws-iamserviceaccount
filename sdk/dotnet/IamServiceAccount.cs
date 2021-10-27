@@ -7,10 +7,10 @@ using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
 
-namespace Pulumi.Xyz
+namespace Pulumi.Iamserviceaccount
 {
-    [XyzResourceType("xyz:index:StaticPage")]
-    public partial class StaticPage : Pulumi.ComponentResource
+    [IamserviceaccountResourceType("iam:index:IamServiceAccount")]
+    public partial class IamServiceAccount : Pulumi.ComponentResource
     {
         /// <summary>
         /// The bucket resource.
@@ -26,14 +26,14 @@ namespace Pulumi.Xyz
 
 
         /// <summary>
-        /// Create a StaticPage resource with the given unique name, arguments, and options.
+        /// Create a IamServiceAccount resource with the given unique name, arguments, and options.
         /// </summary>
         ///
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public StaticPage(string name, StaticPageArgs args, ComponentResourceOptions? options = null)
-            : base("xyz:index:StaticPage", name, args ?? new StaticPageArgs(), MakeResourceOptions(options, ""), remote: true)
+        public IamServiceAccount(string name, IamServiceAccountArgs args, ComponentResourceOptions? options = null)
+            : base("iam:index:IamServiceAccount", name, args ?? new IamServiceAccountArgs(), MakeResourceOptions(options, ""), remote: true)
         {
         }
 
@@ -50,7 +50,7 @@ namespace Pulumi.Xyz
         }
     }
 
-    public sealed class StaticPageArgs : Pulumi.ResourceArgs
+    public sealed class IamServiceAccountArgs : Pulumi.ResourceArgs
     {
         /// <summary>
         /// The HTML content for index.html.
@@ -58,7 +58,7 @@ namespace Pulumi.Xyz
         [Input("indexContent", required: true)]
         public Input<string> IndexContent { get; set; } = null!;
 
-        public StaticPageArgs()
+        public IamServiceAccountArgs()
         {
         }
     }
